@@ -3,11 +3,7 @@ name: Publish Site
 on:
   push:
     branches:
-      - master
-    paths-ignore:
-      - .github
-      - README.md
-      - LICENSE
+      - main
 
 jobs:
   build-mtf-dot-wiki:
