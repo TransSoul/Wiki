@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-mtf-dot-wiki:
     runs-on: ubuntu-22.04
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     steps:
@@ -36,18 +36,18 @@ jobs:
           name: github-pages
           path: public
 
-    deploy:
-    needs: build
+  deploy-mtf-dot-wiki:
+    needs: build-mtf-dot-wiki
     permissions:
-        pages: write
-        id-token: write
+      pages: write
+      id-token: write
     environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-22.04
     steps:
-        - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-            branch: gh-pages
+          branch: gh-pages
