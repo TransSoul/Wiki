@@ -29,6 +29,8 @@ jobs:
         run: hugo --minify --enableGitInfo
       - name: List output directory
         run: ls -la public
+      - name: List files in public directory
+        run: du -sh public/*  # 列出 public 目录下的文件及其大小
       - name: Upload artifact
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v3
