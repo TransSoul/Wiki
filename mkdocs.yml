@@ -3,7 +3,6 @@ site_name: TransSoul-Wiki
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 
-base_url:/Wiki/
 
 plugins:
   - search
@@ -48,8 +47,8 @@ theme:
   icon:
     repo: fontawesome/brands/github
   language: zh
-  logo: cod-fix-logo23.svg
-  favicon: cod-fix-logo23.svg
+  logo: logo.jpg
+  favicon: logo.jpg
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -72,4 +71,4 @@ markdown_extensions:
   - pymdownx.tilde
   - attr_list
 
-copyright: Copyright &copy; 2023 - 2024 TransSoul Inc.
+copyright: Copyright &copy; 2024 - 2024 TransSoul Inc.
