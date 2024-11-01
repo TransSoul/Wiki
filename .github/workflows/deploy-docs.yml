@@ -1,55 +1,25 @@
-name: Publish Site
-
+name: Pages Check
+run-name: ${{ github.actor }} is checking pages deployment 🚀
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
-  build-mtf-dot-wiki:
-    runs-on: ubuntu-22.04
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-          fetch-depth: 0
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: latest
-          extended: true
-      - name: Generated Cache
-        uses: actions/cache@v3
-        with:
-          path: resources/_gen
-          key: ${{ runner.os }}-generated-${{ hashFiles('**') }}
-          restore-keys: ${{ runner.os }}-generated
-      - name: Build
-        run: hugo --minify --enableGitInfo
-      - name: List output directory
-        run: ls -la public
-      - name: List files in public directory
-        run: du -sh public/*  # 列出 public 目录下的文件及其大小
-      - name: Upload artifact
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v3
-        with:
-          name: github-pages
-          path: public
-
-  deploy-mtf-dot-wiki:
-    needs: build-mtf-dot-wiki
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/upload-pages-artifact@v1
-        with:
-          branch: gh-pages
+    - name: Checkout
+      uses: actions/checkout@v4.1.1
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.0.2
+    - name: Install dependencies
+      run: npm install
+    - name: Build Pages
+      run: npm run docs:build
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/.vitepress/dist
+        publish_branch: gh-pages
