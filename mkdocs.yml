@@ -3,6 +3,8 @@ site_name: TransSoul-Wiki
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 
+base_url:/Wiki/
+
 plugins:
   - search
   - include_dir_to_nav
