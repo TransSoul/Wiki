@@ -1,0 +1,73 @@
+site_name: TransSoul-Wiki
+
+repo_url: https://github.com/TransSoul/Wiki
+repo_name: Github Repo
+
+plugins:
+  - search
+  - include_dir_to_nav
+  - git-committers:
+      repository: GudupaoSpark/code-fix
+      branch: main
+      
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - 'js/baidu-tongji.js'
+  - 'js/math.js'
+  - 'js/copy.js'
+
+extra_css:
+    - "stylesheets/extra.css"
+
+theme:
+  custom_dir: overrides
+  name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  icon:
+    repo: fontawesome/brands/github
+  language: zh
+  logo: cod-fix-logo23.svg
+  favicon: cod-fix-logo23.svg
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+
+copyright: Copyright &copy; 2023 - 2024 TransSoul Inc.
