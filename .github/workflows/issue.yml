@@ -8,18 +8,12 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Comment on the issue
-        uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         with:
           script: |
-            const { context, github } = require('@actions/github');
-            const issue_number = context.issue.number;
-            const { owner, repo } = context.repo;
-            await github.rest.issues.createComment({
-              issue_number,
-              owner,
-              repo,
-              body: '感谢您的反馈！我们会尽快处理。'
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '感谢你的问题！'
+            })
