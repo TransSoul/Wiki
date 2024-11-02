@@ -15,7 +15,7 @@ plugins:
 
 theme: 
   font:
-    text: Noto Sans Simplified Chinese
+    text: Cactus Classical Serif
   custom_dir: material/overrides
   name: material
   palette:
