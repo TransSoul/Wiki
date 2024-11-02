@@ -1,8 +1,10 @@
 site_name: TransSoul-Wiki
-
+site_url: https://transsoul.com
+repo_url: https://github.com/TransSoul/Wik
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
-
+site_author: TransSoul Team
+site_description: "TransSoul-Wiki - 支持跨性别者的知识共享平台"
 
 plugins:
   - search
@@ -71,4 +73,4 @@ markdown_extensions:
   - pymdownx.tilde
   - attr_list
 
-copyright: Copyright &copy; 2024 - 2024 TransSoul Inc.
+copyright: Copyright &copy; 2024 - 2024 TransSoul
