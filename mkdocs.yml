@@ -13,7 +13,9 @@ plugins:
       branch: main
     
 
-theme:
+theme: 
+  font:
+    text: Noto Sans Simplified Chinese
   custom_dir: material/overrides
   name: material
   palette:
