@@ -4,7 +4,7 @@ repo_url: https://github.com/TransSoul/Wik
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 site_author: TransSoul Team
-site_description: 支持跨性别者的知识共享平台
+site_description: 一個為跨性別者提供服務的知識平台
 
 plugins:
   - search
@@ -40,7 +40,7 @@ theme:
         name: Switch to system preference
   icon:
     repo: fontawesome/brands/github
-  language: zh
+  language: zh-tw
   logo: logo.jpg
   favicon: logo.jpg
   features:
@@ -55,6 +55,9 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
