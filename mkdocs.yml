@@ -16,7 +16,7 @@ plugins:
 theme: 
   font:
     text: Noto Sans Simplified Chinese
-  custom_dir: material/overrides
+  custom_dir: overrides
   name: material
   palette:
     # Palette toggle for automatic mode
