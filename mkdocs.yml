@@ -3,7 +3,7 @@ repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 site_author: TransSoul Team
 site_description: 一個為跨性別者提供服務的知識平台
-edit_uri: https://example.com/project/repo/blob/main/docs/
+edit_uri: blob/main/docs/
 
 plugins:
   - search
@@ -12,7 +12,6 @@ plugins:
       repository: TransSoul/Wiki
       branch: main
     
-
 
 theme:
   custom_dir: material/overrides
@@ -46,6 +45,8 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - content.code.copy
+    - content.action.edit
+    - content.action.view
 
 markdown_extensions:
   - pymdownx.arithmatex:
