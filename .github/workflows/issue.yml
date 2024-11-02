@@ -24,3 +24,5 @@ jobs:
               repo: context.repo.repo,
               body: `感谢你的问题！  https://github.com/TransSoul/Wiki/issues/${context.issue.number}`
             });
+        env:
+            GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
