@@ -15,7 +15,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '感谢你的问题！  https://github.com/TransSoul/Wiki/issues/'+context.issue.number
-            })
-            env:
-                GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+              body: `感谢你的问题！  https://github.com/TransSoul/Wiki/issues/${context.issue.number}`
+            });
+        env:
+            GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
