@@ -12,11 +12,13 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+            const issue_number = context.issue.number;
+            const { owner, repo } = context.repo;
+            await github.issues.createComment({
+              issue_number,
+              owner,
+              repo,
               body: '感谢您的反馈！我们会尽快处理。'
-            })
+            });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
