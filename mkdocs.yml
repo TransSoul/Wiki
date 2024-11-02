@@ -13,7 +13,6 @@ plugins:
       branch: main
     
 
-
 theme:
   custom_dir: material/overrides
   name: material
