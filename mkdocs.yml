@@ -4,7 +4,7 @@ repo_url: https://github.com/TransSoul/Wik
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 site_author: TransSoul Team
-site_description: "TransSoul-Wiki - 支持跨性别者的知识共享平台"
+site_description: 支持跨性别者的知识共享平台
 
 plugins:
   - search
@@ -12,19 +12,11 @@ plugins:
   - git-committers:
       repository: GudupaoSpark/code-fix
       branch: main
-      
-extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - 'js/baidu-tongji.js'
-  - 'js/math.js'
-  - 'js/copy.js'
+    
 
-extra_css:
-    - "stylesheets/extra.css"
 
 theme:
-  custom_dir: overrides
+  custom_dir: material/overrides
   name: material
   palette:
     # Palette toggle for automatic mode
