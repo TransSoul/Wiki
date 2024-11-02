@@ -17,6 +17,7 @@ jobs:
           owner: ${{ github.repository_owner }}
       - uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.auth.outputs.token }}
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -24,5 +25,3 @@ jobs:
               repo: context.repo.repo,
               body: `感谢你的问题！  https://github.com/TransSoul/Wiki/issues/${context.issue.number}`
             });
-        env:
-            GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
