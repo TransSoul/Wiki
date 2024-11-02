@@ -40,7 +40,7 @@ theme:
         name: Switch to system preference
   icon:
     repo: fontawesome/brands/github
-  language: zh-tw
+  language: zh-TW
   logo: logo.jpg
   favicon: logo.jpg
   features:
