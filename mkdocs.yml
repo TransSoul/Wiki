@@ -1,16 +1,15 @@
 site_name: TransSoul-Wiki
-site_url: https://transsoul.com
-repo_url: https://github.com/TransSoul/Wik
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 site_author: TransSoul Team
 site_description: 一個為跨性別者提供服務的知識平台
+edit_uri: https://example.com/project/repo/blob/main/docs/
 
 plugins:
   - search
   - include_dir_to_nav
   - git-committers:
-      repository: GudupaoSpark/code-fix
+      repository: TransSoul/Wiki
       branch: main
     
 
@@ -40,7 +39,7 @@ theme:
         name: Switch to system preference
   icon:
     repo: fontawesome/brands/github
-  language: zh-tw
+  language: zh-TW
   logo: logo.jpg
   favicon: logo.jpg
   features:
