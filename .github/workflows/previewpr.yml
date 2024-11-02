@@ -1,0 +1,102 @@
+name: Preview PR Build with MkDocs
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出主仓库代码
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          fetch-depth: 0
+
+      - name: 检出 PR 修改的部分
+        run: |
+          git fetch origin pull/${{ github.event.pull_request.number }}/head:pr-${{ github.event.pull_request.number }}
+          git checkout pr-${{ github.event.pull_request.number }}
+
+      # 检查PR是否只修改了docs文件夹
+      - name: 检查文件更改
+        id: check-changes
+        run: |
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD)
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+          if [[ "$CHANGED_FILES" == *"docs"* || "$CHANGED_FILES" == "" ]]; then
+            echo "Only 'docs' folder or no changes."
+            echo "::set-output name=only_docs::true"
+          else
+            echo "Changes outside 'docs' folder detected."
+            echo "::set-output name=only_docs::false"
+          fi
+
+      # 如果更改了docs文件夹以外的文件，则关闭PR并添加评论
+      - name: 关闭PR并添加评论
+        if: steps.check-changes.outputs.only_docs == 'false'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const comment = '⚠️ PR已自动关闭，因为检测到对`docs`文件夹以外的文件进行了修改。';
+            github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment,
+            });
+            github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+              state: 'closed',
+            });
+
+      # 以下步骤仅当PR只修改了docs文件夹时执行
+      - name: 修改配置文件以应用预览
+        if: steps.check-changes.outputs.only_docs == 'true'
+        run: |
+          cp -f preview-mkdocs.yml mkdocs.yml
+
+      - name: 安装 Python 以及 pip
+        if: steps.check-changes.outputs.only_docs == 'true'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: 安装支持库
+        if: steps.check-changes.outputs.only_docs == 'true'
+        run: pip install -r requirements.txt
+
+      - name: 构建页面
+        if: steps.check-changes.outputs.only_docs == 'true'
+        run: mkdocs build
+
+      - name: 上传到 Cloudflare Pages
+        if: steps.check-changes.outputs.only_docs == 'true'
+        uses: cloudflare/pages-action@v1
+        id: deploy
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_PAGES_ACCOUNT }}
+          projectName: preview-transsoul
+          directory: site  # MkDocs builds the site into a 'site' directory by default
+
+      - name: 评论 PR 部署链接
+        if: steps.check-changes.outputs.only_docs == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const previewUrl = `${{ steps.deploy.outputs.url }}`;
+            const comment = `🚀 预览部署完成！访问链接: ${previewUrl}\nGudupao 不为此内容负责！`;
+            github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment,
+            });

@@ -1,0 +1,71 @@
+site_name: TransSoul-Wiki-Preview
+repo_url: https://github.com/TransSoul/Wiki
+repo_name: Github Repo
+site_author: TransSoul Team
+site_description: 一個為跨性別者提供服務的知識平台
+edit_uri: blob/main/docs/
+
+plugins:
+  - search
+  - include_dir_to_nav
+    
+
+theme:
+  custom_dir: material/overrides
+  name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  icon:
+    repo: fontawesome/brands/github
+  language: zh-TW
+  logo: logo.jpg
+  favicon: logo.jpg
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - admonition
+
+copyright: TransSoul Team 不為此預覽內容負責！
