@@ -101,7 +101,7 @@ jobs:
           script: |
             const prNumber = context.payload.pull_request.number;
             const previewUrl = `${{ steps.deploy.outputs.url }}`;
-            const comment = `感謝你的貢獻，已經安排相關人員審核！/n🚀 預覽部署完成！訪問鏈接: ${previewUrl}\nTransSoul Team 不為此預覽內容負責！`;
+            const comment = `感謝你的貢獻，已經安排相關人員審核！\n🚀 預覽部署完成！訪問鏈接: ${previewUrl}\nTransSoul Team 不為此預覽內容負責！`;
             github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,
