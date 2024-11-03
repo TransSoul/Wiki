@@ -8,14 +8,14 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - name: 生成 GitHub App 临时令牌
+      - name: 生成 GitHub App 臨時令牌
         id: auth
         uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ vars.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_APP_SECRET }}
           owner: ${{ github.repository_owner }}
-      - name: 添加评论
+      - name: 添加評論
         uses: actions/github-script@v6
         with:
           github-token: ${{ steps.auth.outputs.token }}

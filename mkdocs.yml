@@ -57,9 +57,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -70,7 +68,8 @@ markdown_extensions:
   - pymdownx.tilde
   - attr_list
   - pymdownx.details
-  - pymdownx.superfences
   - admonition
+  - toc:
+      permalink: ¶
 
 copyright: Copyright &copy; 2024 - 2024 TransSoul

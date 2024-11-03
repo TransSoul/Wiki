@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+
+contact_links:
+  - name: PR
+    url: https://github.com/TransSoul/Wiki/pulls
+    about: 通過 PR 提交更改
