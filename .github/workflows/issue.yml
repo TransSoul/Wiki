@@ -8,14 +8,15 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - name: 使用 GitHub App 进行身份验证
+      - name: 生成 GitHub App 临时令牌
         id: auth
         uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ vars.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_APP_SECRET }}
           owner: ${{ github.repository_owner }}
-      - uses: actions/github-script@v6
+      - name: 添加评论
+        uses: actions/github-script@v6
         with:
           github-token: ${{ steps.auth.outputs.token }}
           script: |
@@ -23,5 +24,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `感谢你的问题！  https://github.com/TransSoul/Wiki/issues/${context.issue.number}`
+              body: `感謝你的問題，已經安排相關人員處理！ \n https://github.com/TransSoul/Wiki/issues/${context.issue.number}`
             });
