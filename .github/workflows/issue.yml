@@ -1,4 +1,4 @@
-name: Comment on Issue
+name: Issue 處理
 
 on:
   issues:

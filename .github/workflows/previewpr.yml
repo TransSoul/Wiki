@@ -1,4 +1,4 @@
-name: Preview PR Build with MkDocs
+name: PR 審核 / 預覽
 
 on:
   pull_request_target:
@@ -71,7 +71,7 @@ jobs:
 
       - name: 安裝 Python and pip
         if: steps.check-changes.outputs.only_docs == 'true'
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
           cache: 'pip'

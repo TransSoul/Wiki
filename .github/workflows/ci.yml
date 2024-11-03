@@ -1,4 +1,4 @@
-name: ci 
+name: 構建
 on:
   push:
     branches:
