@@ -49,7 +49,7 @@ jobs:
           github-token: ${{ steps.auth.outputs.token }}
           script: |
             const prNumber = context.payload.pull_request.number;
-            const comment = '⚠️ PR已自动关闭，因为检测到对`docs`文件夹以外的文件进行了修改。';
+            const comment = '首先，感謝你的貢獻，但是審查發現你修改了了非 `docs/` 目錄下的文件，這可能導致未知問題，因此我們關閉了這個提交請求\n如確有需要，請聯係技術審核 https://github.coom/lidongxun967';
             github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,
