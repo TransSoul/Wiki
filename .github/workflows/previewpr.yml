@@ -46,6 +46,7 @@ jobs:
         if: steps.check-changes.outputs.only_docs == 'false'
         uses: actions/github-script@v6
         with:
+          github-token: ${{ steps.auth.outputs.token }}
           script: |
             const prNumber = context.payload.pull_request.number;
             const comment = '⚠️ PR已自动关闭，因为检测到对`docs`文件夹以外的文件进行了修改。';
