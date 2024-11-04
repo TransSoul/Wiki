@@ -18,9 +18,9 @@
 
 ## 通過 GitHub 發送 PR
 
-1.  Fork 本倉庫
-2.  進行更改
-3.  提交 PR（請詳細描述更改）
+1. Fork 本倉庫
+2. 進行更改
+3. 提交 PR（請詳細描述更改）
 
 ## 通過 GitHub 發送 Issue
 
@@ -30,4 +30,4 @@
 ## 通過 Email 發送
 
 1. 編寫內容
-2. 發送 Email 到 [EMAIL](mailto:transsoul@myyahoo.com)
+2. 發送 Email 到 [transsoul@myyahoo.com](mailto:transsoul@myyahoo.com)
