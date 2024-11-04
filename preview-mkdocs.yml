@@ -2,16 +2,17 @@ site_name: TransSoul-Wiki-Preview
 repo_url: https://github.com/TransSoul/Wiki
 repo_name: Github Repo
 site_author: TransSoul Team
-site_description: 一個為跨性別者提供服務的知識平台
+site_description: 一個為跨性別者提供服務的知識平台——PR預覽版
 edit_uri: blob/main/docs/
 
 plugins:
   - search
   - include_dir_to_nav
-    
 
-theme:
-  custom_dir: material/overrides
+theme: 
+  font:
+    text: Noto Sans Simplified Chinese
+  custom_dir: overrides
   name: material
   palette:
     # Palette toggle for automatic mode
@@ -52,9 +53,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -65,7 +64,8 @@ markdown_extensions:
   - pymdownx.tilde
   - attr_list
   - pymdownx.details
-  - pymdownx.superfences
   - admonition
+  - toc:
+      permalink: ¶
 
 copyright: TransSoul Team 不為此預覽內容負責！
