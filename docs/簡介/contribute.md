@@ -5,7 +5,7 @@
 我們支持三種貢獻方式：
 
 1.  [通過 GitHub 發送 PR](/%E7%B0%A1%E4%BB%8B/contribute/#github-pr)
-2.  [通過 GitHub 發送 Issue](/%E7%B0%A1%E4%BB%8B/contribute/#github-Issue)
+2.  [通過 GitHub 發送 Issue](/%E7%B0%A1%E4%BB%8B/contribute/#github-issue)
 3.  [通過 Email 提交](/%E7%B0%A1%E4%BB%8B/contribute/#email)
 
 以下是各種貢獻方式的對比：
@@ -13,7 +13,7 @@
 | 模式 | 貢獻者顯示 | 簡單 | 審查速度 |
 | - | - | - | - |
 | [PR](/%E7%B0%A1%E4%BB%8B/contribute/#github-pr) | ✓ | ✕ | 快 |
-| [Issue](/%E7%B0%A1%E4%BB%8B/contribute/#github-Issue)  | ✕ | 一般 | 較慢 |
+| [Issue](/%E7%B0%A1%E4%BB%8B/contribute/#github-issue)  | ✕ | 一般 | 較慢 |
 | [Email](/%E7%B0%A1%E4%BB%8B/contribute/#email) | ✕ | ✓ | 較慢 |
 
 ## 通過 GitHub 發送 PR
