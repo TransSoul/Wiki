@@ -13,7 +13,6 @@ const config = {
   title: 'TransSoul Wiki',
   tagline: '一個小文檔',
   favicon: 'img/logo.jpg',
-
   // Set the production url of your site here
   url: 'https://transsoul.com',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -55,7 +54,7 @@ const config = {
       }),
     ],
   ],
-  themes: ['@docusaurus/theme-search-algolia'],
+  
   themeConfig:
     
     
