@@ -1,17 +1,17 @@
 {
-  "defaultLocale": "zh-tw",
+  "defaultLocale": "zh-hk",
   "locales": [
-    "zh-tw"
+    "zh-hk"
   ],
   "path": "i18n",
-  "currentLocale": "zh-tw",
+  "currentLocale": "zh-hk",
   "localeConfigs": {
-    "zh-tw": {
-      "label": "中文（台灣）",
+    "zh-hk": {
+      "label": "中文（中國香港特別行政區）",
       "direction": "ltr",
-      "htmlLang": "zh-tw",
+      "htmlLang": "zh-hk",
       "calendar": "gregory",
-      "path": "zh-tw"
+      "path": "zh-hk"
     }
   }
 }

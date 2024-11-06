@@ -14,9 +14,9 @@ export default {
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
-    "defaultLocale": "zh-tw",
+    "defaultLocale": "zh-hk",
     "locales": [
-      "zh-tw"
+      "zh-hk"
     ],
     "path": "i18n",
     "localeConfigs": {}
