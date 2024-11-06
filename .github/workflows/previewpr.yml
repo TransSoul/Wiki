@@ -85,11 +85,18 @@ jobs:
           projectName: preview-transsoul
           directory: build
 
-      - name: 設置 Cloudflare 預覽鏈接
+      - name: 等待部署完成並獲取預覽 URL
         if: ${{ env.ONLY_DOCS == 'true' }}
         run: |
-          # 这里假设你已经知道 Cloudflare Pages 的 URL 格式（通常是你的域名加上路径）
-          PREVIEW_URL="https://preview-transsoul.pages.dev"  # 替换为你的实际 Cloudflare 预览 URL
+          # 使用 Cloudflare API 获取部署状态
+          DEPLOYMENT_STATUS=$(curl -s -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_PAGES_ACCOUNT }}/pages/projects/preview-transsoul/deployments" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}" \
+            -H "Content-Type: application/json")
+          
+          # 获取最后一次部署的预览 URL
+          PREVIEW_URL=$(echo $DEPLOYMENT_STATUS | jq -r '.result[0].url')
+
+          # 设置预览 URL 环境变量
           echo "PREVIEW_URL=$PREVIEW_URL" >> $GITHUB_ENV
 
       - name: 評論 PR 預覽鏈接
