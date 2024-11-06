@@ -1,0 +1,30 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* 亮色模式：强化的蓝粉交替 */
+:root {
+  --ifm-color-primary: #FF91AF; /* 主色：鲜艳粉色 */
+  --ifm-color-primary-dark: #009FE3; /* 主辅助色：鲜艳蓝色 */
+  --ifm-color-primary-darker: #FF6298; /* 深粉色 */
+  --ifm-color-primary-darkest: #007ACC; /* 深蓝色 */
+  --ifm-color-primary-light: #FFC2D3; /* 浅粉色 */
+  --ifm-color-primary-lighter: #7FD4FF; /* 浅蓝色 */
+  --ifm-color-primary-lightest: #E1F7FF; /* 极淡蓝色 */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 159, 227, 0.15); /* 半透明蓝色背景 */
+}
+
+/* 暗色模式：强化的蓝粉交替 */
+[data-theme='dark'] {
+  --ifm-color-primary: #FF79B0; /* 主色：亮粉色 */
+  --ifm-color-primary-dark: #009FE3; /* 辅助色：亮蓝色 */
+  --ifm-color-primary-darker: #E6458D; /* 深粉色 */
+  --ifm-color-primary-darkest: #005F99; /* 深蓝色 */
+  --ifm-color-primary-light: #FFA4B9; /* 浅粉色 */
+  --ifm-color-primary-lighter: #7FD4FF; /* 浅蓝色 */
+  --ifm-color-primary-lightest: #D6F3FF; /* 极淡蓝色 */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 121, 176, 0.2); /* 半透明粉色背景 */
+}
