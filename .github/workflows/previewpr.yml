@@ -87,7 +87,10 @@ jobs:
 
       - name: 設置 Cloudflare 預覽鏈接
         if: ${{ env.ONLY_DOCS == 'true' }}
-        run: echo "PREVIEW_URL=https://your-deployment-url" >> $GITHUB_ENV
+        run: |
+          # 这里假设你已经知道 Cloudflare Pages 的 URL 格式（通常是你的域名加上路径）
+          PREVIEW_URL="https://preview-transsoul.pages.dev"  # 替换为你的实际 Cloudflare 预览 URL
+          echo "PREVIEW_URL=$PREVIEW_URL" >> $GITHUB_ENV
 
       - name: 評論 PR 預覽鏈接
         if: ${{ env.ONLY_DOCS == 'true' }}
