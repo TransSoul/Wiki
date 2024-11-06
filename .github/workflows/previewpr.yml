@@ -25,7 +25,6 @@ jobs:
         run: |
           git fetch origin pull/${{ github.event.pull_request.number }}/head:pr-${{ github.event.pull_request.number }}
           git checkout pr-${{ github.event.pull_request.number }}
-
       # 检查PR是否只修改了docs文件夹
       - name: 檢查修改部分
         id: check-changes
@@ -35,15 +34,14 @@ jobs:
           echo "$CHANGED_FILES"
           if [[ "$CHANGED_FILES" == *"docs"* || "$CHANGED_FILES" == "" ]]; then
             echo "Only 'docs' folder or no changes."
-            echo "::set-output name=only_docs::true"
+            echo "ONLY_DOCS=true" >> $GITHUB_ENV
           else
             echo "Changes outside 'docs' folder detected."
-            echo "::set-output name=only_docs::false"
+            echo "ONLY_DOCS=false" >> $GITHUB_ENV
           fi
-
       # 如果更改了docs文件夹以外的文件，则关闭PR并添加评论
       - name: 關閉 PR 并添加評論
-        if: steps.check-changes.outputs.only_docs == 'false'
+        if: ${{ env.ONLY_DOCS == 'false' }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ steps.auth.outputs.token }}
@@ -62,41 +60,44 @@ jobs:
               pull_number: prNumber,
               state: 'closed',
             });
-
       - name: 安裝 Python and pip
-        if: steps.check-changes.outputs.only_docs == 'true'
+        if: ${{ env.ONLY_DOCS == 'true' }}
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
       - name: 安裝支持庫
-        if: steps.check-changes.outputs.only_docs == 'true'
+        if: ${{ env.ONLY_DOCS == 'true' }}
         run: npm install --frozen-lockfile
 
       - name: 構建頁面
-        if: steps.check-changes.outputs.only_docs == 'true'
+        if: ${{ env.ONLY_DOCS == 'true' }}
         run: npm run build
 
       - name: 上傳到 Cloudflare Pages
-        if: steps.check-changes.outputs.only_docs == 'true'
+        if: ${{ env.ONLY_DOCS == 'true' }}
         uses: cloudflare/pages-action@v1
         id: deploy
         with:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_PAGES_ACCOUNT }}
           projectName: preview-transsoul
-          directory: build  # MkDocs builds the site into a 'site' directory by default
+          directory: build
+
+      - name: 設置 Cloudflare 預覽鏈接
+        if: ${{ env.ONLY_DOCS == 'true' }}
+        run: echo "PREVIEW_URL=https://your-deployment-url" >> $GITHUB_ENV
 
       - name: 評論 PR 預覽鏈接
-        if: steps.check-changes.outputs.only_docs == 'true'
+        if: ${{ env.ONLY_DOCS == 'true' }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ steps.auth.outputs.token }}
           script: |
             const prNumber = context.payload.pull_request.number;
-            const previewUrl = ${{ steps.deploy.outputs.url }};
-            const comment = 感謝你的貢獻，已經安排相關人員審核！\n🚀 預覽部署完成！訪問鏈接: ${previewUrl}\nTransSoul Team 不為此預覽內容負責！;
+            const previewUrl = process.env.PREVIEW_URL;
+            const comment = `感謝你的貢獻，已經安排相關人員審核！\n🚀 預覽部署完成！訪問鏈接: ${previewUrl}\nTransSoul Team 不為此預覽內容負責！`;
             github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,
