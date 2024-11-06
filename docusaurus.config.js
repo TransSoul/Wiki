@@ -1,12 +1,5 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -14,145 +7,118 @@ const config = {
   tagline: '一個小文檔',
   favicon: 'img/logo.jpg',
 
-  // Set the production url of your site here
+  // Production URL of the site
   url: 'https://transsoul.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'TransSoul', // Usually your GitHub org/user name.
-  projectName: 'Wiki', // Usually your repo name.
+  // GitHub pages deployment config
+  organizationName: 'TransSoul',
+  projectName: 'Wiki',
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw', // Option to throw error on broken links
+  onBrokenMarkdownLinks: 'warn', // Option to show a warning on broken markdown links
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Internationalization
   i18n: {
-    defaultLocale: 'zh-hk',
-    locales: ['zh-hk'],
+    defaultLocale: 'zh-hk', // Set default locale to Traditional Chinese (Hong Kong)
+    locales: ['zh-hk'], // Supported locales
   },
 
+  // Presets to configure various parts of the site
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/TransSoul/Wiki/tree/main/',
+          sidebarPath: './sidebars.js', // Path to your sidebar config
+          editUrl: 'https://github.com/TransSoul/Wiki/tree/main/', // URL for editing the docs
         },
-
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/css/custom.css', // Path to your custom CSS
         },
-      }),
+      },
     ],
   ],
 
-  themeConfig:
-    
-    
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-      navbar: {
-        title: 'TransSoul',
-        logo: {
-          alt: 'a docs for Transgender',
-          src: 'img/logo.jpg',
+  // Theme configuration for Navbar, Footer, and Prism (code highlighting)
+  themeConfig: {
+    image: 'img/docusaurus-social-card.jpg', // Image for social sharing
+
+    // Navbar configuration
+    navbar: {
+      title: 'TransSoul',
+      logo: {
+        alt: 'TransSoul Wiki Logo',
+        src: 'img/logo.jpg', // Logo image path
+      },
+      items: [
+        {
+          type: 'docSidebar', // Link to docs sidebar
+          sidebarId: 'tutorialSidebar', // Sidebar configuration ID
+          position: 'left',
+          label: '文檔', // Label for the docs section
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '文檔',
-          },
-          {
-            href: 'https://github.com/TransSoul/Wiki',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: '文檔',
-            items: [
-              {
-                label: '介绍',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: '社交账号',
-            items: [
-              {
-                label: 'X',
-                href: 'https://x.com/TransSoul_Team',
-              },
-            ],
-          },
-          {
-            title: '更多',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} TransSoul Team. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-      algolia: {
-      // The application ID provided by Algolia
-      appId: 'NZAZEXXN9H',
-
-      // Public API key: it is safe to commit it
-      apiKey: '4c2d0ccd7ef66b14f9b2b0857959f18f',
-
-      indexName: 'TransSoul_wiki',
-
-      // Optional: see doc section below
-      contextualSearch: true,
-
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      externalUrlRegex: 'external\\.com|domain\\.com',
-
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-      replaceSearchResultPathname: {
-        from: '/docs/', // or as RegExp: /\/docs\//
-        to: '/',
-      },
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: 'search',
-
-      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-      insights: false,
-
-      //... other Algolia params
+        {
+          href: 'https://github.com/TransSoul/Wiki',
+          label: 'GitHub', // GitHub link
+          position: 'right', // Right side of the navbar
+        },
+      ],
     },
-    }),
+
+    // Footer configuration
+    footer: {
+      style: 'dark', // Dark style for footer
+      links: [
+        {
+          title: '文檔', // Section title
+          items: [
+            {
+              label: '介绍', // Item label
+              to: '/docs/intro', // Link to the "intro" document
+            },
+          ],
+        },
+        {
+          title: '社交账号', // Social accounts section
+          items: [
+            {
+              label: 'X', // Social media link label
+              href: 'https://x.com/TransSoul_Team', // Social media link (X/Twitter)
+            },
+          ],
+        },
+        {
+          title: '更多', // More section
+          items: [
+            {
+              label: 'GitHub', // GitHub link
+              href: 'https://github.com/facebook/docusaurus', // Docusaurus GitHub link
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} TransSoul Team. Built with Docusaurus.`,
+    },
+
+    // Code syntax highlighting configuration
+    prism: {
+      theme: prismThemes.github, // Light theme for code blocks
+      darkTheme: prismThemes.dracula, // Dark theme for code blocks
+    },
+  },
+
+  // Plugins configuration (e.g., search plugin)
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      {
+        hashed: true, // Enable long-term cache for search index file
+        language: ['zh', 'en'], // Supported languages for search
+      },
+    ],
+  ],
 };
 
 export default config;

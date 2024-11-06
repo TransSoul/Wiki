@@ -40,7 +40,7 @@ export default {
     "navbar": {
       "title": "TransSoul",
       "logo": {
-        "alt": "a docs for Transgender",
+        "alt": "TransSoul Wiki Logo",
         "src": "img/logo.jpg"
       },
       "items": [
@@ -295,20 +295,6 @@ export default {
         }
       ]
     },
-    "algolia": {
-      "appId": "NZAZEXXN9H",
-      "apiKey": "4c2d0ccd7ef66b14f9b2b0857959f18f",
-      "indexName": "TransSoul_wiki",
-      "contextualSearch": true,
-      "externalUrlRegex": "external\\.com|domain\\.com",
-      "replaceSearchResultPathname": {
-        "from": "/docs/",
-        "to": "/"
-      },
-      "searchParameters": {},
-      "searchPagePath": "search",
-      "insights": false
-    },
     "colorMode": {
       "defaultMode": "light",
       "disableSwitch": false,
@@ -332,6 +318,18 @@ export default {
       "maxHeadingLevel": 3
     }
   },
+  "themes": [
+    [
+      "/Users/gudupao/Downloads/TransSoul/Wiki/node_modules/@easyops-cn/docusaurus-search-local/dist/server/server/index.js",
+      {
+        "hashed": true,
+        "language": [
+          "zh",
+          "en"
+        ]
+      }
+    ]
+  ],
   "baseUrlIssueBanner": true,
   "future": {
     "experimental_faster": {
@@ -355,7 +353,6 @@ export default {
   ],
   "customFields": {},
   "plugins": [],
-  "themes": [],
   "scripts": [],
   "headTags": [],
   "stylesheets": [],
