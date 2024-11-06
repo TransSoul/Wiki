@@ -55,7 +55,7 @@ const config = {
       }),
     ],
   ],
-
+  themes: ['@docusaurus/theme-search-algolia'],
   themeConfig:
     
     
