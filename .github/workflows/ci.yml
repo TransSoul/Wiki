@@ -1,34 +1,34 @@
-name: 構建
+name: Deploy
+
 on:
   push:
     branches:
       - main
-permissions:
-  contents: write
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+
 jobs:
-  deploy:
+  build:
+    name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
-      - name: 檢出代碼
-        uses: actions/checkout@v4
-      - name: 配置 Git 憑證
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - name: 安裝 Python and pip
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
         with:
-          python-version: 3.x
-      - name: 配置緩存
-        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - name: 加載緩存
-        uses: actions/cache@v4
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - name: 安裝依賴
-        run: pip install -r requirements.txt
-      - name: 構建并推送
-        run: mkdocs gh-deploy --force
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --frozen-lockfile
+
+      - name: Build website
+        run: npm run build
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
