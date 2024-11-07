@@ -90,7 +90,12 @@ const config = {
             {
               label: 'X', // Social media link label
               href: 'https://x.com/TransSoul_Team', // Social media link (X/Twitter)
-            },
+            }
+          ],
+        },
+        {
+          title: '社區', // Social accounts section
+          items: [
             {
               label: 'Discord', // Social media link label
               href: 'https://discord.gg/mD32PfA29v', // Social media link (Discord)
