@@ -1,41 +1,25 @@
-# Website
+# 關於本站
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+本站使用 [Docusaurus](https://docusaurus.io/)搭建
 
-### Installation
+### 安裝
 
 ```
 $ yarn
 ```
 
-### Local Development
+### 啟動
 
 ```
 $ yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+**請注意，在搜索需要Build後才能更新，在本地不需要進行Build操作，只能邊寫Docs裡面的內容，否則審核將自動不通過**
 
-### Build
+## 版權
 
-```
-$ yarn build
-```
+本站版權協議採用CC BY-SA 4.0，轉載請標明出處
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## 運營
 
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+本站由TransSoul Team運營
