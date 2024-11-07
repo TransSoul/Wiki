@@ -93,7 +93,7 @@ const config = {
             },
             {
               label: 'Discord', // Social media link label
-              href: 'https://discord.gg/mD32PfA29v', // Social media link (X/Twitter)
+              href: 'https://discord.gg/mD32PfA29v', // Social media link (Discord)
             },
           ],
         },
