@@ -42,6 +42,11 @@ const config = {
 
   // Theme configuration for Navbar, Footer, and Prism (code highlighting)
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
     image: 'img/docusaurus-social-card.jpg', // Image for social sharing
 
     // Navbar configuration
@@ -75,7 +80,7 @@ const config = {
           items: [
             {
               label: '介绍', // Item label
-              to: '/docs/intro', // Link to the "intro" document
+              to: '/docs', // Link to the "intro" document
             },
           ],
         },
@@ -98,7 +103,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} TransSoul Team. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} TransSoul Team.`,
     },
 
     // Code syntax highlighting configuration

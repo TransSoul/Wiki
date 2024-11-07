@@ -4,32 +4,26 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: '心理諮詢',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        提供心理諮詢服務，幫助跨性別者處理與性別認同相關的情緒和心理挑戰。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '出櫃支持',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        協助跨性別者向他們的父母、朋友、同學或老師出櫃，提供指導和支持，幫助他們順利表達自己的身份。
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '家長勸導',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        為家長提供諮詢和教育，幫助他們理解跨性別者的需求與挑戰，增強家庭支持。
       </>
     ),
   },
@@ -38,9 +32,6 @@ const FeatureList = [
 function Feature({Svg, title, description}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
@@ -54,9 +45,9 @@ export default function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-{/*           {FeatureList.map((props, idx) => (
+           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
-          ))} */}
+          ))} 
         </div>
       </div>
     </section>

@@ -28,7 +28,7 @@ function HomepageHeader() {
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link className="button button--primary" to="/docs/intro">
+          <Link className="button button--primary" to="/docs/">
             开始阅读
           </Link>
           <Link className="button button--info" to="https://github.com/TransSoul/Wiki">
