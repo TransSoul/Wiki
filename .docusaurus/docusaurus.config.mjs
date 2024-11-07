@@ -5,7 +5,7 @@
  */
 export default {
   "title": "TransSoul Wiki",
-  "tagline": "一個小文檔",
+  "tagline": "一個為跨性別者提供服務的知識平台",
   "favicon": "img/logo.jpg",
   "url": "https://transsoul.com",
   "baseUrl": "/",
@@ -84,7 +84,7 @@ export default {
           "items": [
             {
               "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
+              "href": "https://github.com/TransSoul/Wiki"
             }
           ]
         }
@@ -320,7 +320,7 @@ export default {
   },
   "themes": [
     [
-      "/Users/gudupao/Downloads/TransSoul/Wiki/node_modules/@easyops-cn/docusaurus-search-local/dist/server/server/index.js",
+      "C:\\Users\\ldx\\Wiki-1\\node_modules\\@easyops-cn\\docusaurus-search-local\\dist\\server\\server\\index.js",
       {
         "hashed": true,
         "language": [

@@ -4,7 +4,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'TransSoul Wiki',
-  tagline: '一個小文檔',
+  tagline: '一個為跨性別者提供服務的知識平台',
   favicon: 'img/logo.jpg',
 
   // Production URL of the site
@@ -93,7 +93,7 @@ const config = {
           items: [
             {
               label: 'GitHub', // GitHub link
-              href: 'https://github.com/facebook/docusaurus', // Docusaurus GitHub link
+              href: 'https://github.com/TransSoul/Wiki', // Docusaurus GitHub link
             },
           ],
         },

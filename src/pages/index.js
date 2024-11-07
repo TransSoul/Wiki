@@ -9,21 +9,34 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+    <div className={styles.hero} data-theme="dark">
+      <div className={styles.heroInner}>
+        <Heading as="h1" className={styles.heroProjectTagline}>
+          <img
+            alt={{message: 'Docusaurus with Keytar'}}
+            className={styles.heroLogo}
+            src={'/img/logo.jpg'}
+            width="200"
+            height="200"
+          />
+          <span
+            className={styles.heroTitleTextHtml}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: '<b>TransSoul Wiki</b>',
+            }}
+          />
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            開始閱讀
+        <div className={styles.indexCtas}>
+          <Link className="button button--primary" to="/docs/intro">
+            开始阅读
+          </Link>
+          <Link className="button button--info" to="https://github.com/TransSoul/Wiki">
+            Github
           </Link>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 

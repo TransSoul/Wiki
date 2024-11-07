@@ -1,12 +1,12 @@
-import lunr from "/Users/gudupao/Downloads/TransSoul/Wiki/node_modules/lunr/lunr.js";
-require("/Users/gudupao/Downloads/TransSoul/Wiki/node_modules/lunr-languages/lunr.stemmer.support.js")(lunr);
-require("/Users/gudupao/Downloads/TransSoul/Wiki/node_modules/@easyops-cn/docusaurus-search-local/dist/client/shared/lunrLanguageZh.js").lunrLanguageZh(lunr);
-require("/Users/gudupao/Downloads/TransSoul/Wiki/node_modules/lunr-languages/lunr.multi.js")(lunr);
+import lunr from "C:\\Users\\ldx\\Wiki-1\\node_modules\\lunr\\lunr.js";
+require("C:\\Users\\ldx\\Wiki-1\\node_modules\\lunr-languages\\lunr.stemmer.support.js")(lunr);
+require("C:\\Users\\ldx\\Wiki-1\\node_modules\\@easyops-cn\\docusaurus-search-local\\dist\\client\\shared\\lunrLanguageZh.js").lunrLanguageZh(lunr);
+require("C:\\Users\\ldx\\Wiki-1\\node_modules\\lunr-languages\\lunr.multi.js")(lunr);
 export const language = ["zh","en"];
 export const removeDefaultStopWordFilter = false;
 export const removeDefaultStemmer = false;
 export const Mark = null;
-export const searchIndexUrl = "search-index{dir}.json?_=b7bb19ab";
+export const searchIndexUrl = "search-index{dir}.json?_=682f8163";
 export const searchResultLimits = 8;
 export const searchResultContextMaxLength = 50;
 export const explicitSearchResultPath = false;
