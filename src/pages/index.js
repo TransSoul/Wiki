@@ -31,8 +31,8 @@ function HomepageHeader() {
           <Link className="button button--primary" to="/docs/">
             开始阅读
           </Link>
-          <Link className="button button--info" to="https://github.com/TransSoul/Wiki">
-            Github
+          <Link className="button button--info" to="https://discord.gg/mD32PfA29v">
+            Discord
           </Link>
         </div>
       </div>
