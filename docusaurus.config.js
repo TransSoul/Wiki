@@ -90,6 +90,9 @@ const config = {
             {
               label: 'X', // Social media link label
               href: 'https://x.com/TransSoul_Team', // Social media link (X/Twitter)
+            },{
+              label: 'Bluesky', // Social media link label
+              href: 'https://transsoul.bsky.social', // Social media link (X/Twitter)
             }
           ],
         },
