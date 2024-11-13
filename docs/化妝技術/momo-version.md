@@ -8,7 +8,7 @@
 
 以下是推薦產品：
 
-[圖片鏈接](https://raw.githubusercontent.com/TransSoul/tuchuang/refs/heads/main/1f1a3e63f18db373f414222f02cd1e21.jpg)（因為太大了很難顯示）
+[圖片鏈接](./1f1a3e63f18db373f414222f02cd1e21.jpg)（因為太大了很難顯示）
 
 ### 護膚
 
@@ -24,7 +24,7 @@
 
 推薦：
 
-![](https://raw.githubusercontent.com/TransSoul/tuchuang/refs/heads/main/289312d69116c38a76bbd8af109ef052.jpg)
+![](./289312d69116c38a76bbd8af109ef052.jpg)
 
 ### 防曬
 
@@ -32,20 +32,20 @@
 
 推薦：
 
-![](https://raw.githubusercontent.com/TransSoul/tuchuang/refs/heads/main/289312d69116c38a76bbd8af109ef052.jpg)
+![](./289312d69116c38a76bbd8af109ef052.jpg)
 
 ### 粉底液
 
 選粉底液之前，首先要確認自己是什麽膚質。首先的話，如果臉上一天都非常油的話，就是油皮需要去買油皮的。如果臉上一天來說都沒有許多出油的，你叫幹皮，然後要買去幹皮的。然後，混油皮和混幹皮是什麽呢？混油皮就是說有些是幹的大部分是一直發油的。然後混幹皮就是說只有你的T區會出，就是說你的鼻子那里
 
-![](https://raw.githubusercontent.com/TransSoul/tuchuang/refs/heads/main/32c18d8dd1d053cd8584c0d5879bb68b.jpg)
+![](./32c18d8dd1d053cd8584c0d5879bb68b.jpg)
 
 然後上粉底的話，我這邊推薦是一些這種海綿墊子，然後把它浸濕之後，用紙弄幹，然後去上妝鋪開粉底。這個每天都要去清洗一遍
 
-![](https://raw.githubusercontent.com/TransSoul/tuchuang/refs/heads/main/141c2220463fe13ff8b9863753c1e70c.jpg)
+![](./141c2220463fe13ff8b9863753c1e70c.jpg)
 
 ### 定妝噴霧
 
 定妝噴霧的要求沒有很高，可以去網上搜一下那種便宜好用的就可以了
 
-![](https://raw.githubusercontent.com/TransSoul/tuchuang/refs/heads/main/ff0e885458a4e71872311dc37f18fc97.jpg)
+![](./ff0e885458a4e71872311dc37f18fc97.jpg)
