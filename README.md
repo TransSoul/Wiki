@@ -5,13 +5,13 @@
 ### 安裝
 
 ```
-$ yarn
+$ npm install
 ```
 
 ### 啟動
 
 ```
-$ yarn start
+$ npm start
 ```
 
 **請注意，在搜索需要Build後才能更新，在本地不需要進行Build操作，只能編寫Docs裡面的內容，否則審核將自動不通過**
