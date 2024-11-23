@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>TransSoul Wiki Blog</title>
+        <link>https://transsoul.com/blog</link>
+        <description>TransSoul Wiki Blog</description>
+        <lastBuildDate>Sat, 23 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-hk</language>
+        <item>
+            <title><![CDATA[TransSoul News]]></title>
+            <link>https://transsoul.com/blog/2024/11/23/ welcome</link>
+            <guid>https://transsoul.com/blog/2024/11/23/ welcome</guid>
+            <pubDate>Sat, 23 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to TransSoul News.]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="欢迎来到-transsoul-news">欢迎来到 TransSoul News！<a href="https://transsoul.com/blog/2024/11/23/%20welcome#%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-transsoul-news" class="hash-link" aria-label="欢迎来到 TransSoul News！的直接連結" title="欢迎来到 TransSoul News！的直接連結">​</a></h2>
+<p>Welcome to TransSoul News.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
