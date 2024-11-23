@@ -62,7 +62,7 @@ const config = {
           sidebarId: 'tutorialSidebar', // Sidebar configuration ID
           position: 'left',
           label: '文檔', // Label for the docs section
-        },{to: 'blog', label: 'Blog', position: 'left'},
+        },{to: 'blog', label: 'News', position: 'left'},
         {
           href: 'https://github.com/TransSoul/Wiki',
           label: 'GitHub', // GitHub link
@@ -90,6 +90,9 @@ const config = {
             {
               label: 'Bluesky', // Social media link label
               href: 'https://bsky.app/profile/transsoul.pages.dev', // Social media link (X/Twitter)
+            },{
+              label: 'X', // Social media link label
+              href: 'https://x.com/TransSoul_HK', // Social media link (X/Twitter)
             }
           ],
         },
