@@ -62,7 +62,7 @@ const config = {
           sidebarId: 'tutorialSidebar', // Sidebar configuration ID
           position: 'left',
           label: '文檔', // Label for the docs section
-        },
+        },{to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/TransSoul/Wiki',
           label: 'GitHub', // GitHub link
