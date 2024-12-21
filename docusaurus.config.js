@@ -119,6 +119,14 @@ const config = {
               label: 'GitHub', // GitHub link
               href: 'https://github.com/TransSoul/Wiki', // Docusaurus GitHub link
             },
+            {
+              label: 'News', // GitHub link
+              href: 'https://news.transsoul.top/', // Docusaurus GitHub link
+            },
+            {
+              label: 'Trans-Parents', // GitHub link
+              href: 'https://trans-parents.transsoul.top/', // Docusaurus GitHub link
+            },
           ],
         },
       ],
