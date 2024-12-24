@@ -106,9 +106,6 @@ const config = {
             {
               label: 'Discord', // Social media link label
               href: 'https://discord.gg/mD32PfA29v', // Social media link (Discord)
-            },{
-              label: 'Telegram', // Social media link label
-              href: 'https://t.me/+aIGddEwR4DQxNTU9', // Social media link (Discord)
             },
           ],
         },
