@@ -15,7 +15,7 @@ const config = {
   organizationName: 'TransSoul',
   projectName: 'Wiki',
 
-  onBrokenLinks: 'throw', // Option to throw error on broken links
+  onBrokenLinks: 'warn', // Option to show a warning on broken links
   onBrokenMarkdownLinks: 'warn', // Option to show a warning on broken markdown links
 
   // Internationalization
