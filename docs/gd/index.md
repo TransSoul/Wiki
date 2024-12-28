@@ -1,3 +1,7 @@
+---
+title: 性別焦慮（GD）
+sidebar_position: 2
+---
 # 什麼是性別焦慮（GD）？
 
 ## 概述
